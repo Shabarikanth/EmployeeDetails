@@ -1,0 +1,470 @@
+﻿@model EmployeeDetails.Models.EmpBasicDetails
+
+@{
+    ViewData["Title"] = "EmpBasicDetails";
+}
+<style>
+    .mandatory {
+        color: red;
+        position: relative;
+        top: 2px;
+        left: 5px;
+    }
+</style>
+
+<script type="text/javascript">
+    @if (TempData["notice"] != null)
+    {
+        @:alert('@TempData["notice"]');
+    }
+</script>
+<style>
+
+    .mandatory {
+        color: red;
+        position: relative;
+        top: 2px;
+        left: 5px;
+    }
+
+    .preview {
+        display: inline-block;
+        margin: 10px;
+        padding-left: 900px;
+    }
+
+        .preview img {
+            width: 70px;
+            height: 70px;
+            margin-right: 10px;
+        }
+
+    input[type=file] {
+        display: block;
+        padding-left: 700px;
+    }
+
+</style>
+<div class="row wrapper border-bottom page-heading">
+    <div class="col-lg-12">
+
+        <ol class="breadcrumb">
+            <li class="active"> <strong>New Employee Details</strong> </li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper-content ">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="widgets-container">
+                    @using (Html.BeginForm("EmpBasicDetails", "EmpBasicDetails", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <form>
+
+
+
+
+
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Employee Details</button>
+                                </li>
+                                @*<li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Education Details</button>
+                                </li>*@
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Employee Login</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <br /> <label for="inputName3" class="col-sm-4 control-label">Employee No<label class="mandatory"></label></label>
+                                                <div class="col-sm-12">
+                                                    @Html.TextBoxFor(C => C.EmpId, new { @id = "txtEmpId", @class = "form-control", @TabIndex = 1, @readonly = "readonly" })
+                                                    @Html.HiddenFor(C => C.ID)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+
+                                                <br><label for="inputName3" class="col-sm-5 control-label">Employee Name<label class="mandatory">*</label></label>
+                                                <div class="col-sm-12">
+                                                    @Html.TextBoxFor(C => C.Ename, new { @id = "txtEname", @class = "form-control", @TabIndex = 1 })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <br><label for="inputName3" class="col-sm-4 control-label">Date Of Birth<label class="mandatory">*</label></label>
+                                                @Html.TextBoxFor(C => C.Dbirth, new { @id = "Dbirth", @class = "form-control", @type = "date", @placeholder = "Enter Location Start Date", @TabIndex = 1 })
+                                                @* <div class="input-group date form_date col-sm-4" data-date="" data-date-format="dd-M-yyyy">
+                                                    @Html.TextBoxFor(C => C.Dbirth, new { @id = "Dbirth", @class = "form-control", @readonly = true })
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                </div> *@
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <br /><label for="inputName3" class="col-sm-3 control-label">Gender<label class="Mandatory"></label></label>
+                                                <div class="col-sm-12">
+                                                    <div class="input-group">
+
+                                                        @Html.RadioButtonFor(C => C.Gender, "MALE", new { @TabIndex = 2 })
+                                                        <label id="mt-radio">MALE</label>&emsp;
+                                                        @Html.RadioButtonFor(C => C.Gender, "FEMALE", new { @TabIndex = 3 })
+                                                        <label id="mt-radio">FEMALE</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <br /><label for="inputName3" class="col-sm-4 control-label">Marital status<label class="Mandatory"></label></label>
+                                                <div class="col-sm-12">
+                                                    <div class="input-group">
+
+                                                        @Html.RadioButtonFor(C => C.Maritalstatus, "Married", new { @TabIndex = 2 })
+                                                        <label id="mt-radio">Married</label>&emsp;
+                                                        @Html.RadioButtonFor(C => C.Maritalstatus, "Unmarried", new { @TabIndex = 3 })
+                                                        <label id="mt-radio">Unmarried</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <br /><label for="inputName3" class="col-sm-4 control-label">Aadhar Number</label>
+                                                <div class="col-sm-12">
+                                                    @Html.TextBoxFor(C => C.AadharNumber, new { @id = "txtAadhar", @class = "form-control", @TabIndex = 1 })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <br /><label for="inputName3" class="col-sm-4 control-label">Address<label class="mandatory"></label></label>
+                                                <div class="col-sm-12">
+                                                    @Html.TextAreaFor(C => C.Address, new { @id = "txtAddress", @class = "form-control", @TabIndex = 1 })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <br /><label for="inputName3" class="col-sm-4 control-label">State<label class="mandatory"></label></label>
+                                                <div class="col-sm-12">
+                                                    @* @Html.DropDownListFor(C => C.Stateid, Model.Statelst, "--Please Select--", new { @id = "ddlState", @Class = "form-control _select", @TabIndex = 1 }) *@
+                                                    @Html.TextBoxFor(C => C.Stateid, new { @id = "ddlState", @class = "form-control", @TabIndex = 1 })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <br /><label for="inputName3" class="col-sm-4 control-label">City<label class="mandatory"></label></label>
+                                                <div class="col-sm-12">
+                                                    @* @Html.DropDownListFor(C => C.Cityid, Model.Citylst, "--Please Select--", new { @id = "ddlCity", @Class = "form-control _select", @TabIndex = 1 }) *@
+                                                    @Html.TextBoxFor(C => C.Cityid, new { @id = "ddlCity", @class = "form-control", @TabIndex = 1 })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+
+                                                <br><label for="inputName3" class="col-sm-4 control-label">Mobile No<label class="mandatory">*</label></label>
+                                                <div class="col-sm-12">
+                                                    @Html.TextBoxFor(C => C.Mobile, new
+                                                        {
+                                                            @id = "txtmobile",
+                                                            @class = "form-control",
+                                                            @TabIndex = 1,
+                                                            @maxlength = "10",
+                                                            @type = "tel",
+                                                            @onkeypress = "return event.charCode >= 48 && event.charCode <= 57"
+                                                        })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <br> <label for="inputName3" class="col-sm-4 control-label">Email<label class="mandatory">*</label></label>
+
+                                                <div class="col-sm-12">
+                                                    @Html.TextBoxFor(C => C.Email, new { @id = "txtEmail", @class = "form-control", @type = "email", @TabIndex = 1 })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <br /><label for="inputName3" class="col-sm-4 control-label">Bank Name<label class="mandatory">*</label></label>
+                                                <div class="col-sm-12">
+                                                    @Html.TextBoxFor(C => C.Bank, new { @id = "txtBank", @class = "form-control", @TabIndex = 1 })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <br /><label for="inputName3" class="col-sm-5 control-label">Account Number<label class="mandatory">*</label></label>
+                                                <div class="col-sm-12">
+                                                    @Html.TextBoxFor(C => C.AccNumber, new { @id = "txtAccount", @class = "form-control", @TabIndex = 1 })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <br><label for="inputName3" class="col-sm-4 control-label">Date Of Joining<label class="mandatory">*</label></label>
+                                                @Html.TextBoxFor(C => C.Djoining, new { @id = "Djoining", @class = "form-control", @type = "date", @placeholder = "Enter Location Start Date", @TabIndex = 1 })
+                                                @* <div class="input-group date form_date col-sm-4" data-date="" data-date-format="dd-M-yyyy">
+                                                    @Html.TextBoxFor(C => C.Djoining, new { @id = "Djoining", @class = "form-control", @readonly = true })
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                </div> *@
+                                            </div>
+                                        </div>
+                                        @* <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <br><label for="inputName3" class="col-sm-4 control-label">Date Of Leaving<label class="mandatory"></label></label>
+
+                                                <div class="input-group date form_date col-sm-4" data-date="" data-date-format="dd-M-yyyy">
+                                                    @Html.TextBoxFor(C => C.Dleaving, new { @id = "Dleaving", @class = "form-control", @readonly = true })
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                </div>
+                                            </div>
+                                        </div> *@
+
+                                    </div>
+
+
+                                    @*2rd tab*@
+
+                                    @*3rd tab*@
+                                </div>
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <br /> <label for="inputName3" class="col-sm-4 control-label">User Name<label class="mandatory">*</label></label>
+                                                <div class="col-sm-12">
+                                                    @Html.TextBoxFor(C => C.Uname, new { @id = "txtUname", @class = "form-control", @TabIndex = 1 })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <br /> <label for="inputName3" class="col-sm-4 control-label">Password<label class="mandatory">*</label></label>
+                                                <div class="col-sm-12">
+                                                    @Html.TextBoxFor(C => C.Pass, new { @id = "txtPass", @class = "form-control", @TabIndex = 1 })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div style="height:30px;"></div>
+                            <div class="col-lg-8"></div>
+                            <button type="submit" class="btn btn-success" id="btnSave">Submit</button>
+                            <button class="btn btn-danger" type="button" causesvalidation="false" onclick="location.href='@Url.Action("ListEmpBasicDetails", "EmpBasicDetails")'">Cancel</button>
+
+
+
+
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+       $('._select').select2();
+    });
+
+    $(document).ready(function () {
+        $('#btnSave').click(function (e) {
+            var isValid = true;
+
+
+            if (document.getElementById("txtEname").value == "") {
+                isValid = false;
+                $(txtEname).css({
+                    "border": "1px solid red",
+                    "background": "#FFCECE"
+                });
+
+                alert("Please Enter Employee Name");
+                return false;
+            }
+            else {
+                $(txtEname).css({
+                    "border": "",
+                    "background": ""
+                });
+            }
+            if (document.getElementById("Dbirth").value == "") {
+                isValid = false;
+                $(Dbirth).css({
+                    "border": "1px solid red",
+                    "background": "#FFCECE"
+                });
+
+                alert("Please Select Date Of Birth");
+                return false;
+            }
+            else {
+                $(Dbirth).css({
+                    "border": "",
+                    "background": ""
+                });
+            }
+            if (document.getElementById("txtmobile").value == "") {
+                isValid = false;
+                $(txtmobile).css({
+                    "border": "1px solid red",
+                    "background": "#FFCECE"
+                });
+
+                alert("Please Enter Mobile No");
+                return false;
+            }
+            else {
+                $(txtmobile).css({
+                    "border": "",
+                    "background": ""
+                });
+            }
+            if (document.getElementById("txtEmail").value == "") {
+                isValid = false;
+                $(txtEmail).css({
+                    "border": "1px solid red",
+                    "background": "#FFCECE"
+                });
+
+                alert("Please Enter Email");
+                return false;
+            }
+            else {
+                $(txtEmail).css({
+                    "border": "",
+                    "background": ""
+                });
+            }
+            if (document.getElementById("txtBank").value == "") {
+                isValid = false;
+                $(txtBank).css({
+                    "border": "1px solid red",
+                    "background": "#FFCECE"
+                });
+
+                alert("Please Enter Bank Name");
+                return false;
+            }
+            else {
+                $(txtBank).css({
+                    "border": "",
+                    "background": ""
+                });
+            }
+
+            
+            if (document.getElementById("txtAccount").value == "") {
+                isValid = false;
+                $(txtAccount).css({
+                    "border": "1px solid red",
+                    "background": "#FFCECE"
+                });
+
+                alert("Please Enter Account Number");
+                return false;
+            }
+            else {
+                $(txtAccount).css({
+                    "border": "",
+                    "background": ""
+                });
+            }
+            if (document.getElementById("Djoining").value == "") {
+                isValid = false;
+                $(Djoining).css({
+                    "border": "1px solid red",
+                    "background": "#FFCECE"
+                });
+
+                alert("Please Select Date Of Joining");
+                return false;
+            }
+            else {
+                $(Djoining).css({
+                    "border": "",
+                    "background": ""
+                });
+            }
+
+            if (document.getElementById("txtUname").value == "") {
+                isValid = false;
+                $(txtUname).css({
+                    "border": "1px solid red",
+                    "background": "#FFCECE"
+                });
+
+                alert("Please Enter User Name");
+                return false;
+            }
+            else {
+                $(txtUname).css({
+                    "border": "",
+                    "background": ""
+                });
+            }
+            if (document.getElementById("txtPass").value == "") {
+                isValid = false;
+                $(txtPass).css({
+                    "border": "1px solid red",
+                    "background": "#FFCECE"
+                });
+
+                alert("Please Enter Password");
+                return false;
+            }
+            else {
+                $(txtPass).css({
+                    "border": "",
+                    "background": ""
+                });
+            }
+
+            if (isValid == false)
+                e.preventDefault();
+        });
+
+    });
+    // $('.form_date').datetimepicker({
+    //     //   language:  'fr',
+    //     weekStart: 1,
+    //     todayBtn: 1,
+    //     autoclose: 1,
+    //     todayHighlight: 1,
+    //     startView: 2,
+    //     minView: 2,
+    //     endDate: new Date(),
+    //     forceParse: 0
+    // });
+</script>
+
