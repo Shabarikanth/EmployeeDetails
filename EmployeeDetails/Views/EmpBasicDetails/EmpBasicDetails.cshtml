@@ -63,10 +63,6 @@
                         @Html.AntiForgeryToken()
                         <form>
 
-
-
-
-
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Employee Details</button>
@@ -85,7 +81,7 @@
                                             <div class="form-group">
                                                 <br /> <label for="inputName3" class="col-sm-4 control-label">Employee No<label class="mandatory"></label></label>
                                                 <div class="col-sm-12">
-                                                    @Html.TextBoxFor(C => C.EmpId, new { @id = "txtEmpId", @class = "form-control", @TabIndex = 1, @readonly = "readonly" })
+                                                    @Html.TextBoxFor(C => C.EmpId, new { @id = "txtEmpId", @class = "form-control", @TabIndex = 1, @placeholder = "Enter Employee No (System Generated)", @readonly = "readonly" })
                                                     @Html.HiddenFor(C => C.ID)
                                                 </div>
                                             </div>
@@ -95,14 +91,14 @@
 
                                                 <br><label for="inputName3" class="col-sm-5 control-label">Employee Name<label class="mandatory">*</label></label>
                                                 <div class="col-sm-12">
-                                                    @Html.TextBoxFor(C => C.Ename, new { @id = "txtEname", @class = "form-control", @TabIndex = 1 })
+                                                    @Html.TextBoxFor(C => C.Ename, new { @id = "txtEname", @class = "form-control", @placeholder = "Enter Employee Name", @TabIndex = 1 })
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <br><label for="inputName3" class="col-sm-4 control-label">Date Of Birth<label class="mandatory">*</label></label>
-                                                @Html.TextBoxFor(C => C.Dbirth, new { @id = "Dbirth", @class = "form-control", @type = "date", @placeholder = "Enter Location Start Date", @TabIndex = 1 })
+                                                @Html.TextBoxFor(C => C.Dbirth, new { @id = "Dbirth", @class = "form-control", @type = "date", @TabIndex = 1 })
                                                 @* <div class="input-group date form_date col-sm-4" data-date="" data-date-format="dd-M-yyyy">
                                                     @Html.TextBoxFor(C => C.Dbirth, new { @id = "Dbirth", @class = "form-control", @readonly = true })
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -144,7 +140,7 @@
                                             <div class="form-group">
                                                 <br /><label for="inputName3" class="col-sm-4 control-label">Aadhar Number</label>
                                                 <div class="col-sm-12">
-                                                    @Html.TextBoxFor(C => C.AadharNumber, new { @id = "txtAadhar", @class = "form-control", @TabIndex = 1 })
+                                                    @Html.TextBoxFor(C => C.AadharNumber, new { @id = "txtAadhar", @class = "form-control", @placeholder = "Enter Aadhar Number", @TabIndex = 1 })
                                                 </div>
                                             </div>
                                         </div>
@@ -154,7 +150,7 @@
                                             <div class="form-group">
                                                 <br /><label for="inputName3" class="col-sm-4 control-label">Address<label class="mandatory"></label></label>
                                                 <div class="col-sm-12">
-                                                    @Html.TextAreaFor(C => C.Address, new { @id = "txtAddress", @class = "form-control", @TabIndex = 1 })
+                                                    @Html.TextAreaFor(C => C.Address, new { @id = "txtAddress", @class = "form-control", @placeholder = "Enter Address", @TabIndex = 1 })
                                                 </div>
                                             </div>
                                         </div>
@@ -190,6 +186,7 @@
                                                             @TabIndex = 1,
                                                             @maxlength = "10",
                                                             @type = "tel",
+                                                            @placeholder = "Enter Mobile No",
                                                             @onkeypress = "return event.charCode >= 48 && event.charCode <= 57"
                                                         })
                                                 </div>
@@ -201,7 +198,7 @@
                                                 <br> <label for="inputName3" class="col-sm-4 control-label">Email<label class="mandatory">*</label></label>
 
                                                 <div class="col-sm-12">
-                                                    @Html.TextBoxFor(C => C.Email, new { @id = "txtEmail", @class = "form-control", @type = "email", @TabIndex = 1 })
+                                                    @Html.TextBoxFor(C => C.Email, new { @id = "txtEmail", @class = "form-control", @type = "email", @placeholder = "Enter Email", @TabIndex = 1 })
                                                 </div>
                                             </div>
                                         </div>
@@ -209,7 +206,7 @@
                                             <div class="form-group">
                                                 <br /><label for="inputName3" class="col-sm-4 control-label">Bank Name<label class="mandatory">*</label></label>
                                                 <div class="col-sm-12">
-                                                    @Html.TextBoxFor(C => C.Bank, new { @id = "txtBank", @class = "form-control", @TabIndex = 1 })
+                                                    @Html.TextBoxFor(C => C.Bank, new { @id = "txtBank", @class = "form-control", @placeholder = "Enter Bank Name", @TabIndex = 1 })
                                                 </div>
                                             </div>
                                         </div>
@@ -221,14 +218,14 @@
                                             <div class="form-group">
                                                 <br /><label for="inputName3" class="col-sm-5 control-label">Account Number<label class="mandatory">*</label></label>
                                                 <div class="col-sm-12">
-                                                    @Html.TextBoxFor(C => C.AccNumber, new { @id = "txtAccount", @class = "form-control", @TabIndex = 1 })
+                                                    @Html.TextBoxFor(C => C.AccNumber, new { @id = "txtAccount", @class = "form-control", @placeholder = "Enter Account Number", @TabIndex = 1 })
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <br><label for="inputName3" class="col-sm-4 control-label">Date Of Joining<label class="mandatory">*</label></label>
-                                                @Html.TextBoxFor(C => C.Djoining, new { @id = "Djoining", @class = "form-control", @type = "date", @placeholder = "Enter Location Start Date", @TabIndex = 1 })
+                                                @Html.TextBoxFor(C => C.Djoining, new { @id = "Djoining", @class = "form-control", @type = "date", @TabIndex = 1 })
                                                 @* <div class="input-group date form_date col-sm-4" data-date="" data-date-format="dd-M-yyyy">
                                                     @Html.TextBoxFor(C => C.Djoining, new { @id = "Djoining", @class = "form-control", @readonly = true })
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -259,7 +256,7 @@
                                             <div class="form-group">
                                                 <br /> <label for="inputName3" class="col-sm-4 control-label">User Name<label class="mandatory">*</label></label>
                                                 <div class="col-sm-12">
-                                                    @Html.TextBoxFor(C => C.Uname, new { @id = "txtUname", @class = "form-control", @TabIndex = 1 })
+                                                    @Html.TextBoxFor(C => C.Uname, new { @id = "txtUname", @class = "form-control", @placeholder = "Enter User Name", @TabIndex = 1 })
                                                 </div>
                                             </div>
                                         </div>
@@ -267,7 +264,7 @@
                                             <div class="form-group">
                                                 <br /> <label for="inputName3" class="col-sm-4 control-label">Password<label class="mandatory">*</label></label>
                                                 <div class="col-sm-12">
-                                                    @Html.TextBoxFor(C => C.Pass, new { @id = "txtPass", @class = "form-control", @TabIndex = 1 })
+                                                    @Html.TextBoxFor(C => C.Pass, new { @id = "txtPass", @class = "form-control", @placeholder = "Enter Password", @TabIndex = 1 })
                                                 </div>
                                             </div>
                                         </div>

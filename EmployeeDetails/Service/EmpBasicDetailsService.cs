@@ -1,6 +1,8 @@
-﻿namespace EmployeeDetails.Service
+﻿using EmployeeDetails.Interface;
+
+namespace EmployeeDetails.Service
 {
-    public class EmpBasicDetailsService
+    public class EmpBasicDetailsService : IEmpBasicDetails
     {
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace EmployeeDetails.Models
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace EmployeeDetails.Models
 {
     public class EmpBasicDetails
     {
@@ -23,14 +25,15 @@
         public string? Uname { get; set; }
         public string? Pass { get; set; }
         public string? Ddlstatus { get; set; }
+        public List<EmpBasicDetailsgrid>? Employeelst { get; set; }
 
-        //public string? Qualification { get; set; }
-        //public string? University { get; set; }
-        //public string? School { get; set; }
-        //public string? College { get; set; }
-        //public string? Place { get; set; }
-        //public string? YPassing { get; set; }
-    }
+    //public string? Qualification { get; set; }
+    //public string? University { get; set; }
+    //public string? School { get; set; }
+    //public string? College { get; set; }
+    //public string? Place { get; set; }
+    //public string? YPassing { get; set; }
+}
 
     public class EmpBasicDetailsgrid
     {

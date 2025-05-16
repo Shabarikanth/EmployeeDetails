@@ -70,11 +70,12 @@
                                                 @* @{
                                                         int i = 0;
                                                         int j = 1;
-                                                        foreach (var item in Model.citylst.ToList())
+                                                        foreach (var item in Model.Employeelst.ToList())
                                                         {
                                                             <tr>
-                                                                <td> @Html.DisplayFor(o => o.citylst[i].statid)</td>
-                                                                <td> @Html.DisplayFor(o => o.citylst[i].ciname)</td>
+                                                                <td> @Html.DisplayFor(o => o.Employeelst[i].empid)</td>
+                                                                <td> @Html.DisplayFor(o => o.Employeelst[i].ename)</td>
+                                                                <td> @Html.DisplayFor(o => o.Employeelst[i].mobile)</td>
                                                                 <td> @Html.Raw(item.editrow)</td>
                                                                 <td onclick="return ConfirmDelete()"> @Html.Raw(item.delrow)</td>
                                                             </tr>
