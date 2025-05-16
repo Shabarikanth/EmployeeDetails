@@ -13,7 +13,6 @@ namespace EmployeeDetails.Models
         public string? Stateid { get; set; }
         public string? Mobile { get; set; }
         public string? Email { get; set; }
-        public string? Designation { get; set; }
         public string? Department { get; set; }
         public string? Maritalstatus { get; set; }
         public string? Djoining { get; set; }
