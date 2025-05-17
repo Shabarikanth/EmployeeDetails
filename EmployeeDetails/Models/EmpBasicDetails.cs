@@ -13,7 +13,6 @@ namespace EmployeeDetails.Models
         public string? Stateid { get; set; }
         public string? Mobile { get; set; }
         public string? Email { get; set; }
-        public string? Department { get; set; }
         public string? Maritalstatus { get; set; }
         public string? Djoining { get; set; }
         public string? Dbirth { get; set; }
@@ -24,7 +23,7 @@ namespace EmployeeDetails.Models
         public string? Uname { get; set; }
         public string? Pass { get; set; }
         public string? Ddlstatus { get; set; }
-        public List<EmpBasicDetailsgrid>? Employeelst { get; set; }
+        //public List<EmpBasicDetailsgrid>? Employeelst { get; set; }
 
     //public string? Qualification { get; set; }
     //public string? University { get; set; }
