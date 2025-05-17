@@ -5,7 +5,8 @@ namespace EmployeeDetails.Interface
 {
     public interface IEmpBasicDetails
     {
-        string EmployeeCRUD(EmpBasicDetails ic);
+        string EmployeeCRUD(EmpBasicDetails cy);
+        DataTable GetAllEmployeeGRID(string strStatus);
         DataTable GetEditEmployeeDetail(string id);
         string RemoveChange(string tag, string id);
         string StatusChange(string tag, string id);

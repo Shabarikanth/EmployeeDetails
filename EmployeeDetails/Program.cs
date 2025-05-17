@@ -12,6 +12,7 @@ internal class Program
         // Add services to the container.
         builder.Services.AddControllersWithViews();
 
+        builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         builder.Services.TryAddSingleton<IEmpBasicDetails, EmpBasicDetailsService>();
 
         builder.Services.AddControllers();
