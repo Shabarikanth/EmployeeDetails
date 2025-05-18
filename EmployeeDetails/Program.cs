@@ -15,6 +15,7 @@ internal class Program
         builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         builder.Services.TryAddSingleton<IEmpBasicDetails, EmpBasicDetailsService>();
 
+        builder.Services.AddSession();
         builder.Services.AddControllers();
         builder.Services.Configure<FormOptions>(x =>
         {

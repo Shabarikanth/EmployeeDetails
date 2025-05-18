@@ -55,7 +55,7 @@ namespace EmployeeDetails.Service
                     }
                     else
                     {
-                        svSQL = "Update USER_REGIST set EMPLOYEE_ID = '" + cy.EmpId + "',FNAME = '" + cy.Ename + "',GENDER = '" + cy.Gender + "',ADDRESS = '" + cy.Address + "',CITY_ID = '" + cy.Cityid + "',STATE_ID = '" + cy.Stateid + "',MOBILE = '" + cy.Mobile + "',EMAIL = '" + cy.Email + "',MARITALSTATUS = '" + cy.Maritalstatus + "',DATEOFJOINING = '" + cy.Djoining + "',DATEOFBIRTH = '" + cy.Dbirth + "',AANUMBER = '" + cy.AadharNumber + "',ACCNUMBER = '" + cy.AccNumber + "',BANK = '" + cy.Bank + "',USER_NAME = '" + cy.Uname + "',PASSWORD = '" + cy.Pass + "',UPDATED_BY = '" + userId + "',UPDATED_ON = '" + DateTime.Now + "' WHERE USER_REGIST.ID ='" + cy.ID + "'";
+                        svSQL = "Update USER_REGIST set EMPLOYEE_ID = '" + cy.EmpId + "',FNAME = '" + cy.Ename + "',GENDER = '" + cy.Gender + "',ADDRESS = '" + cy.Address + "',CITY_ID = '" + cy.Cityid + "',STATE_ID = '" + cy.Stateid + "',MOBILE = '" + cy.Mobile + "',EMAIL = '" + cy.Email + "',MARITALSTATUS = '" + cy.Maritalstatus + "',DATEOFJOINING = '" + cy.Djoining + "',DATEOFBIRTH = '" + cy.Dbirth + "',AANUMBER = '" + cy.AadharNumber + "',ACCNUMBER = '" + cy.AccNumber + "',BANK = '" + cy.Bank + "',USER_NAME = '" + cy.Uname + "',PASSWORD = '" + cy.Pass + "',UPDATED_BY = '" + userId + "',UPDATED_DATE = '" + DateTime.Now + "' WHERE USER_REGIST.ID ='" + cy.ID + "'";
                         SqlCommand objCmds = new SqlCommand(svSQL, objConn);
                         objCmds.ExecuteNonQuery();
                     }
